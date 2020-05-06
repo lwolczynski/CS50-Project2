@@ -1,0 +1,5 @@
+eventlet
+Flask==1.0.2
+Flask_SocketIO==4.2.1
+Gunicorn==19.9.0
+requests==2.21.0

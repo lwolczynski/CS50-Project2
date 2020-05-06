@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block additional_scripts %}<script src="{{ url_for('static', filename='flack.js') }}"></script>{% endblock %}
+
+{% block body %}
+<body>
+	<nav class="navbar navbar-dark fixed-top bg-dark p-0">
+		<a class="navbar-brand px-2" href="#">Flack</a>
+		<button type="button" id="showSidebar" class="badge badge-secondary d-none" data-toggle="button" aria-pressed="false" autocomplete="off">Show channels</button>	  
+		<span id="channelDisplayField" class="badge badge-primary">No channel open</span>
+		<span id="nameDisplayField" class="badge badge-secondary">Logged in as</span>			
+		<a id="signOutLink" class="nav-link px-2" href="#">Sign out</a>
+	</nav>
+	<div class="container-fluid h-100">
+		<div class="row h-100">
+			<nav id="sidebar" class="col-md-3 col-6 d-none d-md-block px-2 bg-light sidebar">
+				<form id="createNewChannel"> 
+					<div class="input-group">
+						<input type="text" id="newChannelName" class="form-control" placeholder="Create channel" maxLength=25 required>
+						<span class="input-group-btn">
+							<button type="submit" class="btn btn-primary" type="button">+</button>
+						</span>
+					</div>
+				</form>   
+				<ul id="channelList" class="nav flex-column px-0">
+				</ul>
+			</nav>
+			<main role="main" class="col-md-9 ml-sm-auto px-2 mt-5">     
+				<div class="footer px-2">
+					<div id="messageHistory" class="p-2"></div>
+					<div id="message" class="p-0 px-0">
+						<form id="sendNewMessage"> 
+							<div class="input-group">
+								<input type="text" id="newMessage" class="form-control" placeholder="New message" maxLength = 1000 required>
+								<span class="input-group-btn">
+									<button id="newMessageBtn" type="submit" class="btn btn-primary" type="button" disabled>Send</button>
+								</span>
+							</div>
+						</form>
+					</div>
+				</div>
+			</main>
+		</div>
+	</div>
+</body>
+{% endblock %}
