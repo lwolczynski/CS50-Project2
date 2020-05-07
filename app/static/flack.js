@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     updateNameDisplay();
 
     // Connect to websocket
-    var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port, {'transports': ['websocket']});
+    var socket = io.connect(location.protocol + '//' + document.domain + ':' + location.port);
 
     // When connected
     socket.on('connect', () => {
