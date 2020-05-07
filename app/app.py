@@ -56,3 +56,7 @@ def fetch_messages(data):
     channel = data["channelName"]
     # Respond with unicast message containing the list of channel messages
     emit("messages", db_data.get_channel(channel).get_messages(), broadcast=False)
+
+# Run script
+if __name__ == "__main__":
+    socketio.run(app)
