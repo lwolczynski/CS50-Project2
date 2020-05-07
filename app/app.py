@@ -18,7 +18,7 @@ def index():
     return render_template("index.html")
 
 # Render application page 
-@app.route("/flack")
+@app.route("/flack", methods=["GET", "POST"])
 def flack():
     return render_template("flack.html")
 
