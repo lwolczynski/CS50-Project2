@@ -1,1 +1,1 @@
-web: guneventleticorn -k  app.app:app
+web: web: gunicorn -k eventlet app.app:app
