@@ -18,7 +18,7 @@ def index():
     return render_template("index.html")
 
 # Render application page 
-@app.route("/flack", methods=["GET", "POST"])
+@app.route("/flack")
 def flack():
     return render_template("flack.html")
 
@@ -59,4 +59,4 @@ def fetch_messages(data):
 
 # Run script
 if __name__ == "__main__":
-    socketio.run(app, host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
+    socketio.run(app)
